@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Architecture Portfolio showcasing minimal and sustainable designs.">
+    <title>NexHaus | Modern Architecture Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#home" class="logo-link"><img src="images/logo.png" alt="NexHaus Logo" class="logo-img"></a>
+        <div class="mobile-menu-btn">☰</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-slideshow"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content animate-on-scroll">
+            <h1>Designing the Future</h1>
+            <p>Sustainable, modern, and timeless architecture.</p>
+            <a href="#portfolio" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title animate-on-scroll">Selected Works</h2>
+
+        <div class="portfolio-grid-sq">
+            <!-- Project 1 -->
+            <a href="#" class="project-tile animate-on-scroll" data-project="p1">
+                <div class="tile-image">
+                    <img data-src="images/project_01/01.jpg"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        alt="Ruhaan">
+                    <div class="tile-overlay">
+                        <h3>Ruhaan</h3>
+                        <p>A tropical bliss residential project in Kannur, Kerala</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="#" class="project-tile animate-on-scroll" data-project="p2">
+                <div class="tile-image">
+                    <img data-src="images/project_02/01.jpg"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        alt="Seafood Export">
+                    <div class="tile-overlay">
+                        <h3>Seafood Export</h3>
+                        <p>Industrial</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 5 -->
+            <a href="#" class="project-tile animate-on-scroll" data-project="p5">
+                <div class="tile-image">
+                    <img data-src="images/project_05/01.jpg"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        alt="La Casa Blanca">
+                    <div class="tile-overlay">
+                        <h3>La Casa Blanca</h3>
+                        <p>Residence Project / Kollam, Kerala</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 6 -->
+            <a href="#" class="project-tile animate-on-scroll" data-project="p6">
+                <div class="tile-image">
+                    <img data-src="images/project_06/01.jpg"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        alt="Ira - A Tropical Oasis">
+                    <div class="tile-overlay">
+                        <h3>Ira - A Tropical Oasis</h3>
+                        <p>Residential Project / Kannur, Kerala</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="ethosphere" class="portfolio" style="padding-top: 0;">
+        <h2 class="section-title animate-on-scroll">Ethosphere</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #666;" class="animate-on-scroll">Our specialty works
+            and boutique projects.</p>
+
+        <div class="portfolio-grid-sq">
+            <!-- Project 3 -->
+            <a href="#" class="project-tile animate-on-scroll" data-project="p3">
+                <div class="tile-image">
+                    <img data-src="images/project_03/02.jpg"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        alt="Mayah By Maheshwari">
+                    <div class="tile-overlay">
+                        <h3>Mayah By Maheshwari</h3>
+                        <p>Boutique Project / Trivandrum</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 4 -->
+            <a href="#" class="project-tile animate-on-scroll" data-project="p4">
+                <div class="tile-image">
+                    <img data-src="images/project_04/01.jpg"
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                        alt="New Dawn">
+                    <div class="tile-overlay">
+                        <h3>New Dawn</h3>
+                        <p>Residential Project / Alappuzha</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-image animate-on-scroll">
+            <img data-src="images/project_01/03.jpg"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="Architect at work">
+        </div>
+        <div class="about-content animate-on-scroll">
+            <h2>About NexHaus</h2>
+            <p>We believe that architecture is more than just buildings; it's about creating spaces that inspire and
+                elevate the human experience. With a focus on sustainable materials and modern aesthetics, we craft
+                environments that stand the test of time.</p>
+            <p>Our team of dedicated architects and designers work closely with clients to bring their visions to life,
+                ensuring every detail is perfect.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container animate-on-scroll">
+            <h2 class="section-title">Start Your Project</h2>
+            <p>Ready to build something amazing? Let's talk.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Tell us about your project" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2025 NexHaus Architecture. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
