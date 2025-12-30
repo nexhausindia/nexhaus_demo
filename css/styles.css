@@ -57,7 +57,7 @@ header {
 }
 
 .logo-img {
-    height: 50px;
+    height: 40px;
     width: auto;
 }
 
@@ -475,7 +475,8 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.9);
+    /* Darker background for focus */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
@@ -492,64 +493,141 @@ footer {
     pointer-events: all;
 }
 
+/* Lightbox Content */
 .lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;
+    cursor: grab;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    gap: 20px;
+}
+
+.lightbox-content:active {
+    cursor: grabbing;
 }
 
 .lb-img {
-    object-fit: contain;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-}
-
-.lb-main {
-    max-width: 65%;
-    max-height: 85vh;
-    z-index: 10;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-}
-
-.lb-side {
-    max-width: 15%;
-    max-height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Center anchor */
+    width: 70vw;
+    /* 70% of viewport width */
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    max-height: 70vh;
+    /* Leave room for text above and below */
+    transform-origin: center;
+    transition: transform 0.3s ease-out, opacity 0.3s ease, scale 0.3s ease;
+    will-change: transform;
+    user-select: none;
+    -webkit-user-drag: none;
     opacity: 0.4;
-    cursor: pointer;
-    filter: grayscale(100%);
+    /* Faded by default */
+    scale: 0.9;
 }
 
-.lb-side:hover {
-    opacity: 0.8;
-    filter: grayscale(0%);
-    transform: scale(1.05);
+/* Active (Center) Image Styling */
+.lb-img.current {
+    opacity: 1;
+    scale: 1;
+    z-index: 10;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    /* Pop */
+}
+
+/* Initially position images off-screen via JS, but defaults here if needed */
+.lb-prev {
+    transform: translateX(-100%);
+}
+
+.lb-curr {
+    transform: translateX(0);
+    z-index: 10;
+}
+
+.lb-next {
+    transform: translateX(100%);
+}
+
+.lb-hidden {
+    display: none;
 }
 
 .lightbox-close {
     position: absolute;
     top: 20px;
     right: 30px;
-    color: #333;
+    color: #fff;
     font-size: 3rem;
     cursor: pointer;
     transition: 0.3s;
     z-index: 2001;
+    background: rgba(0, 0, 0, 0.2);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50%;
 }
 
 .lightbox-close:hover {
     color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-title {
+    position: absolute;
+    top: 5vh;
+    /* Fixed percentage from top */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 2002;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 90%;
+}
+
+.lightbox-desc {
+    position: absolute;
+    bottom: 5vh;
+    /* Fixed percentage from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ddd;
+    font-size: 1.1rem;
+    z-index: 2002;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
 }
 
 /* Mobile responsive for lightbox */
 @media (max-width: 768px) {
-    .lb-side {
-        display: none;
+    .lb-img {
+        width: 85vw;
+        /* Wider on mobile */
+        max-height: 60vh;
+        /* More room for text on mobile */
+        padding: 0;
     }
 
-    .lb-main {
-        max-width: 90%;
+    .lightbox-title {
+        top: 80px;
+        /* Below close btn */
+        font-size: 1.4rem;
+    }
+
+    .lightbox-desc {
+        bottom: 30px;
+        font-size: 0.95rem;
     }
 }

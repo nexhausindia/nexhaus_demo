@@ -28,7 +28,6 @@
 
     <header>
         <a href="#home" class="logo-link"><img src="images/logo.png" alt="NexHaus Logo" class="logo-img"></a>
-        <div class="mobile-menu-btn">☰</div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -36,6 +35,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="mobile-menu-btn">☰</div>
         </nav>
     </header>
 
@@ -162,10 +162,10 @@
         <div class="contact-container animate-on-scroll">
             <h2 class="section-title">Start Your Project</h2>
             <p>Ready to build something amazing? Let's talk.</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Tell us about your project" required></textarea>
+            <form class="contact-form" action="https://formspree.io/f/xykyoydw" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Tell us about your project" required></textarea>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
